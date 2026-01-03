@@ -1,0 +1,8 @@
+# Python
+__pycache__/
+*.pyc
+
+# Databases
+*.db
+*.db-shm
+*.db-wal
