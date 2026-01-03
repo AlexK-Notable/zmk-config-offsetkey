@@ -10,3 +10,4 @@ __pycache__/
 # Downloaded documentation (kept local, not committed)
 docs/zmk-docs/
 docs/zmk-source/
+docs/zmk-modules/
