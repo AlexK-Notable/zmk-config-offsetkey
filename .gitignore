@@ -6,3 +6,7 @@ __pycache__/
 *.db
 *.db-shm
 *.db-wal
+
+# Downloaded documentation (kept local, not committed)
+docs/zmk-docs/
+docs/zmk-source/

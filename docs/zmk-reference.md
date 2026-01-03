@@ -201,6 +201,23 @@ Enable in .conf: `CONFIG_ZMK_POINTING=y`
 
 ---
 
+## Anti-Idle (zmk-anti-idle module)
+
+Prevents keyboard from going idle by sending periodic mouse movements.
+
+| Command | Description |
+|---------|-------------|
+| `&aim AIM_ON` | Enable anti-idle mode |
+| `&aim AIM_OFF` | Disable anti-idle mode |
+| `&aim AIM_TOG` | Toggle anti-idle mode |
+
+**Your binding:** Layer 2 + CAPS position
+
+When enabled, sends tiny mouse movements every 60 seconds to keep
+keyboard awake. Useful when on external power to keep RGB/display on.
+
+---
+
 ## Custom Hold-Tap (like in your keymap)
 
 ```c
