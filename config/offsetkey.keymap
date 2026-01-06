@@ -53,6 +53,14 @@
             tapping-term-ms = <200>;
             quick-tap-ms = <180>;
         };
+
+        /* Mouse scroll behavior for encoder rotation */
+        inc_dec_msc: inc_dec_msc {
+            compatible = "zmk,behavior-sensor-rotate-var";
+            #sensor-binding-cells = <2>;
+            bindings = <&msc>, <&msc>;
+            tap-ms = <20>;
+        };
     };
 
     combos {
