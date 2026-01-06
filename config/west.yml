@@ -16,6 +16,8 @@ manifest:
       url-base: https://github.com/englmaxi
     - name: a741725193
       url-base: https://github.com/a741725193
+    - name: kbrd-space
+      url-base: https://github.com/kbrd-space
   projects:
     - name: zmk
       remote: zmkfirmware
@@ -38,6 +40,9 @@ manifest:
       revision: main
     - name: zmk-dongle-display
       remote: englmaxi
+      revision: main
+    - name: zmk-anti-idle
+      remote: kbrd-space
       revision: main
   self:
     path: config
