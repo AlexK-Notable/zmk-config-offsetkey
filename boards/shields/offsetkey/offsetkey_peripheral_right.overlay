@@ -9,7 +9,6 @@
 #include "offsetkey.dtsi"
 #include "trackball.dtsi"
 #include "split_input_common.dtsi"
-#define SYMBOLS 2
 #include "rgb.dtsi"
 
 / {
@@ -119,7 +118,19 @@
 };
 
 
-&trackball_split { 
-	device = <&trackball>; 
+&trackball_split {
+	status = "okay";
+	device = <&trackball>;
+};
+
+/* IRQ priority tuning: reduce trackball SPI contention with BLE radio.
+ * Baseline: SPI1=1, GPIOTE=5, radio=1 (all equal or GPIOTE starved).
+ * After:    SPI1=3, GPIOTE=1, radio=1 (radio/GPIO preempt SPI). */
+&spi1 {
+	interrupts = < 4 3 >;
+};
+
+&gpiote {
+	interrupts = < 6 1 >;
 };
 

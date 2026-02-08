@@ -117,48 +117,6 @@ parse_config:
     type: trans
 
   raw_binding_map:
-    # Layers
-    "&ltq 1 BACKSPACE":
-      tap:  $$mdi:backspace$$
-      hold: '$$mdi:navigation-variant$$'
-    "&ltq 3 TAB":
-      tap: $$mdi:keyboard-tab$$
-      hold: $$mdi:numeric$$
-    "&ltq 2 SPACE":
-      tap: $$mdi:keyboard-space$$
-      hold: $$mdi:symbol$$
-    "&ltq 3 ENTER":
-      tap: $$mdi:keyboard-return$$
-      hold: $$mdi:numeric$$
-    "&ltq 1 DELETE":
-      tap: $$mdi:backspace-reverse-outline$$
-      hold: $$mdi:navigation-variant$$
-    # Home rows
-    "&hm LEFT_GUI A":
-      tap: 'A'
-      shifted: $$mdi:apple-keyboard-command$$
-    "&hm LEFT_ALT S":
-      tap: 'S'
-      shifted: $$mdi:apple-keyboard-option$$
-    "&hm LEFT_CONTROL D":
-      tap: 'D'
-      shifted: $$mdi:apple-keyboard-control$$
-    "&hm LEFT_SHIFT F":
-      tap: 'F'
-      shifted: $$mdi:apple-keyboard-shift$$
-    "&hm RIGHT_SHIFT J":
-      tap: 'J'
-      shifted: $$mdi:apple-keyboard-shift$$
-    "&hm RIGHT_CONTROL K":
-      tap: 'K'
-      shifted: $$mdi:apple-keyboard-control$$
-    "&hm RIGHT_ALT L":
-      tap: 'L'
-      shifted: $$mdi:apple-keyboard-option$$
-    # self behaviors
-    "&hm LG(LS(V)) P":
-      tap: 'P'
-      shifted: $$mdi:content-copy$$
     # Mouse
     "&msc SCRL_UP":
       tap: $$mdi:pan-up$$
@@ -198,22 +156,10 @@ parse_config:
       tap: $$mdi:mouse-right-click-outline$$
     "&mkp MCLK":
       tap: $$mdi:mouse-scroll-wheel$$
-    # Modifiers
-    "&caps_word": $$mdi:alpha-w-box$$
-    "&kt RSHIFT":
-      tap: $$mdi:apple-keyboard-shift$$
-      hold: $$mdi:toggle-switch$$
-
     # Empty
     "&none":
       tap: $$mdi:minus-circle-outline$$
       type: none
-
-    # Whitespace
-    "&bkspc_del":
-      type: backspace
-      tap: $$mdi:backspace$$
-      shifted: $$mdi:backspace-reverse-outline$$
 
     # Bluetooth
     "&bt BT_SEL 0":
@@ -522,37 +468,7 @@ parse_config:
       hold: zoom
 
   zmk_combos:
-    combo_to_2:
+    flash:
       align: top
-    combo_to_3:
+    toggle_layer3:
       align: top
-    combo_bt_clear:
-      align: top
-      offset: 0.03
-    combo_mute:
-      align: top
-      offset: 0.15
-    combo_minus:
-      key:
-        shifted: "_"
-        hold: "-"
-    combo_equal:
-      key:
-        shifted: "+"
-        hold: "="
-    combo_backslash:
-      key:
-        shifted: "|"
-        hold: \
-    combo_lbkt:
-      key:
-        shifted: "{"
-        hold: "["
-    combo_rbkt:
-      key:
-        shifted: "}"
-        hold: "]"
-    combo_semicolon:
-      key:
-        shifted: ":"
-        hold: ";"

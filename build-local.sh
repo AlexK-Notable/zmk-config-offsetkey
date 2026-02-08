@@ -43,17 +43,36 @@ case "${1:-all}" in
         build_shield right "offsetkey_peripheral_right" "$PERIPHERAL_MODULES"
         ;;
     dongle)
-        build_shield dongle "offsetkey_central_dongle dongle_display" "$DONGLE_MODULES"
+        echo "=== Building dongle (with ZMK Studio) ==="
+        west build -s zmk/app -b eyelash_nano -d "build_dongle" \
+            -S studio-rpc-usb-uart -- \
+            -DZephyr_DIR="${PROJ_DIR}/zephyr/share/zephyr-package/cmake" \
+            -DSHIELD="offsetkey_central_dongle dongle_display" \
+            -DZMK_CONFIG="${PROJ_DIR}/config" \
+            -DZMK_EXTRA_MODULES="$DONGLE_MODULES" \
+            -DCONFIG_ZMK_STUDIO=y \
+            -DCONFIG_ZMK_STUDIO_LOCKING=n
+        echo "✓ Built: build_dongle/zephyr/zmk.uf2"
         ;;
     all)
         build_shield left "offsetkey_peripheral_left" "$PERIPHERAL_MODULES"
         build_shield right "offsetkey_peripheral_right" "$PERIPHERAL_MODULES"
-        build_shield dongle "offsetkey_central_dongle dongle_display" "$DONGLE_MODULES"
+        # Dongle with ZMK Studio
+        echo "=== Building dongle (with ZMK Studio) ==="
+        west build -s zmk/app -b eyelash_nano -d "build_dongle" \
+            -S studio-rpc-usb-uart -- \
+            -DZephyr_DIR="${PROJ_DIR}/zephyr/share/zephyr-package/cmake" \
+            -DSHIELD="offsetkey_central_dongle dongle_display" \
+            -DZMK_CONFIG="${PROJ_DIR}/config" \
+            -DZMK_EXTRA_MODULES="$DONGLE_MODULES" \
+            -DCONFIG_ZMK_STUDIO=y \
+            -DCONFIG_ZMK_STUDIO_LOCKING=n
+        echo "✓ Built: build_dongle/zephyr/zmk.uf2"
         echo ""
         echo "=== Build complete ==="
         echo "Left:   build_left/zephyr/zmk.uf2"
         echo "Right:  build_right/zephyr/zmk.uf2"
-        echo "Dongle: build_dongle/zephyr/zmk.uf2"
+        echo "Dongle: build_dongle/zephyr/zmk.uf2 (with ZMK Studio)"
         ;;
     *)
         echo "Usage: $0 [left|right|dongle|all]"

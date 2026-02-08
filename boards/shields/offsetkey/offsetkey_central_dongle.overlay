@@ -8,8 +8,6 @@
 #include "offsetkey.dtsi"
 #include "rgb.dtsi"
 #include "split_input_common.dtsi"
-#include "trackball.dtsi"
-#define SYMBOLS 2
 
 / {
 	chosen {

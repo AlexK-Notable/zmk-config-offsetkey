@@ -8,5 +8,6 @@ features:
   - pointer
   - underglow
 siblings:
-  - offsetkey_left
-  - offsetkey_right
+  - offsetkey_peripheral_left
+  - offsetkey_peripheral_right
+  - offsetkey_central_dongle
