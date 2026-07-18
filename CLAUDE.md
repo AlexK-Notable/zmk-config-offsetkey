@@ -1,0 +1,3 @@
+<!-- self-learn:begin (do not hand-edit inside; managed by self-learn) -->
+- **When about to size pixel-art/sprites or lay out UI for an OLED display in the zmk-config-offsetkey project (dongle or peripheral halves) without first checking the actual panel resolution in the board overlay:** grep the relevant devicetree overlay (e.g. boards/shields/*/*.overlay) for the display node before assuming pixel dimensions from memory of similar hardware — an assumed 24x24-32x32 canvas was actually SH1106 128x64, a 4x underestimate that would have produced a badly undersized design *(lrn-4bcdd0a0)*
+<!-- self-learn:end -->
